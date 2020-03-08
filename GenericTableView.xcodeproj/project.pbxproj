@@ -13,6 +13,7 @@
 		FC5BA1B024146518008B7539 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5BA1AE24146518008B7539 /* Main.storyboard */; };
 		FC5BA1B224146519008B7539 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC5BA1B124146519008B7539 /* Assets.xcassets */; };
 		FC5BA1B524146519008B7539 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5BA1B324146519008B7539 /* LaunchScreen.storyboard */; };
+		FC5BA1BD24146A57008B7539 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BA1BC24146A57008B7539 /* RegisterController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FC5BA1B124146519008B7539 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC5BA1B424146519008B7539 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC5BA1B624146519008B7539 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC5BA1BC24146A57008B7539 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				FC5BA1A824146518008B7539 /* AppDelegate.swift */,
 				FC5BA1AA24146518008B7539 /* SceneDelegate.swift */,
 				FC5BA1AC24146518008B7539 /* StoryboardController.swift */,
+				FC5BA1BC24146A57008B7539 /* RegisterController.swift */,
 				FC5BA1AE24146518008B7539 /* Main.storyboard */,
 				FC5BA1B124146519008B7539 /* Assets.xcassets */,
 				FC5BA1B324146519008B7539 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5BA1BD24146A57008B7539 /* RegisterController.swift in Sources */,
 				FC5BA1AD24146518008B7539 /* StoryboardController.swift in Sources */,
 				FC5BA1A924146518008B7539 /* AppDelegate.swift in Sources */,
 				FC5BA1AB24146518008B7539 /* SceneDelegate.swift in Sources */,
