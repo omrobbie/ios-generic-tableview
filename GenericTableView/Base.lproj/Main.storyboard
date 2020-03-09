@@ -99,15 +99,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SBV-3g-l7G">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="705"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sio-mH-Rh1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="yr0-L2-a8H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Sio-mH-Rh1" firstAttribute="leading" secondItem="aic-aH-cOR" secondAttribute="leading" id="0p9-pz-ghQ"/>
+                            <constraint firstItem="Sio-mH-Rh1" firstAttribute="top" secondItem="aic-aH-cOR" secondAttribute="top" id="JGi-A9-EVT"/>
                             <constraint firstItem="SBV-3g-l7G" firstAttribute="leading" secondItem="aic-aH-cOR" secondAttribute="leading" id="LBg-cT-VT6"/>
-                            <constraint firstItem="SBV-3g-l7G" firstAttribute="top" secondItem="aic-aH-cOR" secondAttribute="top" id="NHP-gI-LUc"/>
                             <constraint firstItem="SBV-3g-l7G" firstAttribute="trailing" secondItem="aic-aH-cOR" secondAttribute="trailing" id="ZtC-wo-efI"/>
+                            <constraint firstItem="Sio-mH-Rh1" firstAttribute="trailing" secondItem="aic-aH-cOR" secondAttribute="trailing" id="dGY-wN-NFp"/>
+                            <constraint firstItem="SBV-3g-l7G" firstAttribute="top" secondItem="Sio-mH-Rh1" secondAttribute="bottom" id="hXJ-bE-kLf"/>
                             <constraint firstItem="SBV-3g-l7G" firstAttribute="bottom" secondItem="aic-aH-cOR" secondAttribute="bottom" id="pKc-vt-kRk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aic-aH-cOR"/>
@@ -120,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OK5-WR-zLx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-294" y="892"/>
+            <point key="canvasLocation" x="-294.20289855072468" y="891.96428571428567"/>
         </scene>
         <!--Programmatically-->
         <scene sceneID="fNH-3k-hZ4">
