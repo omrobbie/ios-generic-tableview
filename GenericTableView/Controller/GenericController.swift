@@ -10,11 +10,14 @@ import UIKit
 
 class GenericController: UIViewController {
 
-    var tableView: GenericTableView<UITableViewCell>!
+    var tableView: GenericTableView<Person, UITableViewCell>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView = GenericTableView(frame: view.frame)
+        tableView = GenericTableView(frame: view.frame, items: Person.persons, setupCell: { (item, cell) in
+            cell.textLabel?.text = item.firstName
+        })
+
         view.addSubview(tableView)
     }
 }

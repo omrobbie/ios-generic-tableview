@@ -8,28 +8,34 @@
 
 import UIKit
 
-class GenericTableView<T: UITableViewCell>: UITableView, UITableViewDelegate, UITableViewDataSource {
+class GenericTableView<U, T: UITableViewCell>: UITableView, UITableViewDelegate, UITableViewDataSource {
 
     let cellId = "cellId"
+
+    var items: [U]!
+    var setupCell: (U, T) -> ()
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(frame: CGRect) {
+    init(frame: CGRect, items: [U], setupCell: @escaping (U, T) -> ()) {
+        self.items = items
+        self.setupCell = setupCell
         super.init(frame: frame, style: .plain)
+
         delegate = self
         dataSource = self
         register(T.self, forCellReuseIdentifier: cellId)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! T
-        cell.textLabel?.text = "Generic item \(indexPath.row)"
+        setupCell(items[indexPath.row], cell)
 
         return cell
     }
