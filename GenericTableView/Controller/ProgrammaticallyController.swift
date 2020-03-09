@@ -10,8 +10,15 @@ import UIKit
 
 class ProgrammaticallyController: UIViewController {
 
-    var tableView = UITableView()
-    let id = "cell"
+    let cellId = "cellId"
+
+    var tableView: UITableView!
+
+    // No need to create the ProgrammaticallyCell because the contents are the same.
+    lazy var tableCell: RegisterCell = {
+        let cell = RegisterCell(style: .default, reuseIdentifier: cellId)
+        return cell
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +29,7 @@ class ProgrammaticallyController: UIViewController {
         tableView = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight))
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: id)
+        tableView.register(RegisterCell.self, forCellReuseIdentifier: cellId)
 
         view.addSubview(tableView)
     }
@@ -31,13 +38,23 @@ class ProgrammaticallyController: UIViewController {
 extension ProgrammaticallyController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return Person.persons.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: id) else {return UITableViewCell()}
-        cell.textLabel?.text = "Programmatically item \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! RegisterCell
+        let item = Person.persons[indexPath.row]
+
+        cell.txtFirstName.text = item.firstName
+        cell.txtLastName.text = item.lastName
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = Person.persons[indexPath.row]
+        let message = "\(item.firstName) \(item.lastName)"
+
+        alertMessage(message: message, sender: self)
     }
 }
