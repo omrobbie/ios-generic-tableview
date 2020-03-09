@@ -17,6 +17,9 @@ class GenericController: UIViewController {
         tableView = GenericTableView(frame: view.frame, items: Person.persons, setupCell: { (item, cell) in
             cell.txtFirstName.text = item.firstName
             cell.txtLastName.text = item.lastName
+        }, onSelectedItem: { (item) in
+            let message = "\(item.firstName) \(item.lastName)"
+            alertMessage(message: message, sender: self)
         })
 
         view.addSubview(tableView)
