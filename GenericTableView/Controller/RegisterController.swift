@@ -11,27 +11,42 @@ import UIKit
 class RegisterController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
-    let id = "cell"
+
+    let cellId = "cellId"
+
+    lazy var tableCell: RegisterCell = {
+        let cell = RegisterCell(style: .default, reuseIdentifier: cellId)
+        return cell
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: id)
+        tableView.register(RegisterCell.self, forCellReuseIdentifier: cellId)
     }
 }
 
 extension RegisterController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return Person.persons.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: id) else {return UITableViewCell()}
-        cell.textLabel?.text = "Register item \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! RegisterCell
+        let item = Person.persons[indexPath.row]
+
+        cell.txtFirstName.text = item.firstName
+        cell.txtLastName.text = item.lastName
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = Person.persons[indexPath.row]
+        let message = "\(item.firstName) \(item.lastName)"
+
+        alertMessage(message: message, sender: self)
     }
 }
