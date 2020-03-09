@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterCell: UITableViewCell {
+class ReuseableCell: UITableViewCell {
 
     let txtFirstName = UILabel()
     let txtLastName = UILabel()

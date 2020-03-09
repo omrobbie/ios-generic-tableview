@@ -15,8 +15,8 @@ class ProgrammaticallyController: UIViewController {
     var tableView: UITableView!
 
     // No need to create the ProgrammaticallyCell because the contents are the same.
-    lazy var tableCell: RegisterCell = {
-        let cell = RegisterCell(style: .default, reuseIdentifier: cellId)
+    lazy var tableCell: ReuseableCell = {
+        let cell = ReuseableCell(style: .default, reuseIdentifier: cellId)
         return cell
     }()
 
@@ -29,7 +29,7 @@ class ProgrammaticallyController: UIViewController {
         tableView = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight))
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(RegisterCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(ReuseableCell.self, forCellReuseIdentifier: cellId)
 
         view.addSubview(tableView)
     }
@@ -42,7 +42,7 @@ extension ProgrammaticallyController: UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! RegisterCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! ReuseableCell
         let item = Person.persons[indexPath.row]
 
         cell.txtFirstName.text = item.firstName

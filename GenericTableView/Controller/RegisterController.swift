@@ -14,8 +14,8 @@ class RegisterController: UIViewController {
 
     let cellId = "cellId"
 
-    lazy var tableCell: RegisterCell = {
-        let cell = RegisterCell(style: .default, reuseIdentifier: cellId)
+    lazy var tableCell: ReuseableCell = {
+        let cell = ReuseableCell(style: .default, reuseIdentifier: cellId)
         return cell
     }()
 
@@ -23,7 +23,7 @@ class RegisterController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(RegisterCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(ReuseableCell.self, forCellReuseIdentifier: cellId)
     }
 }
 
@@ -34,7 +34,7 @@ extension RegisterController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! RegisterCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! ReuseableCell
         let item = Person.persons[indexPath.row]
 
         cell.txtFirstName.text = item.firstName
