@@ -15,6 +15,8 @@
 		FC5BA1B524146519008B7539 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5BA1B324146519008B7539 /* LaunchScreen.storyboard */; };
 		FC5BA1BD24146A57008B7539 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BA1BC24146A57008B7539 /* RegisterController.swift */; };
 		FC5BA1BF24146DE3008B7539 /* ProgrammaticallyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BA1BE24146DE3008B7539 /* ProgrammaticallyController.swift */; };
+		FC5BA1C124147949008B7539 /* GenericController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BA1C024147949008B7539 /* GenericController.swift */; };
+		FC5BA1C4241479AB008B7539 /* GenericTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BA1C3241479AB008B7539 /* GenericTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		FC5BA1B624146519008B7539 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC5BA1BC24146A57008B7539 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		FC5BA1BE24146DE3008B7539 /* ProgrammaticallyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticallyController.swift; sourceTree = "<group>"; };
+		FC5BA1C024147949008B7539 /* GenericController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericController.swift; sourceTree = "<group>"; };
+		FC5BA1C3241479AB008B7539 /* GenericTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +64,27 @@
 		FC5BA1A724146518008B7539 /* GenericTableView */ = {
 			isa = PBXGroup;
 			children = (
+				FC5BA1C22414797D008B7539 /* Utilities */,
 				FC5BA1A824146518008B7539 /* AppDelegate.swift */,
 				FC5BA1AA24146518008B7539 /* SceneDelegate.swift */,
 				FC5BA1AC24146518008B7539 /* StoryboardController.swift */,
 				FC5BA1BC24146A57008B7539 /* RegisterController.swift */,
 				FC5BA1BE24146DE3008B7539 /* ProgrammaticallyController.swift */,
+				FC5BA1C024147949008B7539 /* GenericController.swift */,
 				FC5BA1AE24146518008B7539 /* Main.storyboard */,
 				FC5BA1B124146519008B7539 /* Assets.xcassets */,
 				FC5BA1B324146519008B7539 /* LaunchScreen.storyboard */,
 				FC5BA1B624146519008B7539 /* Info.plist */,
 			);
 			path = GenericTableView;
+			sourceTree = "<group>";
+		};
+		FC5BA1C22414797D008B7539 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FC5BA1C3241479AB008B7539 /* GenericTableView.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +158,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5BA1C4241479AB008B7539 /* GenericTableView.swift in Sources */,
 				FC5BA1BD24146A57008B7539 /* RegisterController.swift in Sources */,
 				FC5BA1AD24146518008B7539 /* StoryboardController.swift in Sources */,
 				FC5BA1A924146518008B7539 /* AppDelegate.swift in Sources */,
+				FC5BA1C124147949008B7539 /* GenericController.swift in Sources */,
 				FC5BA1BF24146DE3008B7539 /* ProgrammaticallyController.swift in Sources */,
 				FC5BA1AB24146518008B7539 /* SceneDelegate.swift in Sources */,
 			);
