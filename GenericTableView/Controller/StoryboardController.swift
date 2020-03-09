@@ -22,13 +22,23 @@ class StoryboardController: UIViewController {
 extension StoryboardController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return Person.persons.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {return UITableViewCell()}
-        cell.textLabel?.text = "Storyboard item \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! StoryboardCell
+        let item = Person.persons[indexPath.row]
+
+        cell.txtFirstName.text = item.firstName
+        cell.txtLastName.text = item.lastName
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = Person.persons[indexPath.row]
+        let message = "\(item.firstName) \(item.lastName)"
+
+        alertMessage(message: message, sender: self)
     }
 }

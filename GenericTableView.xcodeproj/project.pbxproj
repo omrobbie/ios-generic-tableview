@@ -18,6 +18,8 @@
 		FC5BA1C124147949008B7539 /* GenericController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BA1C024147949008B7539 /* GenericController.swift */; };
 		FC5BA1C4241479AB008B7539 /* GenericTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BA1C3241479AB008B7539 /* GenericTableView.swift */; };
 		FC5CB7592415F65B00745694 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5CB7582415F65B00745694 /* Person.swift */; };
+		FC5CB75B2415FF2300745694 /* StoryboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5CB75A2415FF2300745694 /* StoryboardCell.swift */; };
+		FC5CB75D241600FE00745694 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5CB75C241600FE00745694 /* AlertMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		FC5BA1C024147949008B7539 /* GenericController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericController.swift; sourceTree = "<group>"; };
 		FC5BA1C3241479AB008B7539 /* GenericTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableView.swift; sourceTree = "<group>"; };
 		FC5CB7582415F65B00745694 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		FC5CB75A2415FF2300745694 /* StoryboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardCell.swift; sourceTree = "<group>"; };
+		FC5CB75C241600FE00745694 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				FC5BA1C3241479AB008B7539 /* GenericTableView.swift */,
+				FC5CB75C241600FE00745694 /* AlertMessage.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 		FC5CB7562415F62400745694 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FC5CB75A2415FF2300745694 /* StoryboardCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +197,8 @@
 				FC5BA1A924146518008B7539 /* AppDelegate.swift in Sources */,
 				FC5BA1C124147949008B7539 /* GenericController.swift in Sources */,
 				FC5BA1BF24146DE3008B7539 /* ProgrammaticallyController.swift in Sources */,
+				FC5CB75D241600FE00745694 /* AlertMessage.swift in Sources */,
+				FC5CB75B2415FF2300745694 /* StoryboardCell.swift in Sources */,
 				FC5CB7592415F65B00745694 /* Person.swift in Sources */,
 				FC5BA1AB24146518008B7539 /* SceneDelegate.swift in Sources */,
 			);
