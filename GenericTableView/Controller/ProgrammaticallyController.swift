@@ -12,7 +12,15 @@ class ProgrammaticallyController: UIViewController {
 
     let cellId = "cellId"
 
-    var tableView: UITableView!
+    lazy var tableView: UITableView = {
+        let tv = UITableView()
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.dataSource = self
+        tv.delegate = self
+        tv.register(ReuseableCell.self, forCellReuseIdentifier: cellId)
+
+        return tv
+    }()
 
     // No need to create the ProgrammaticallyCell because the contents are the same.
     lazy var tableCell: ReuseableCell = {
@@ -20,18 +28,36 @@ class ProgrammaticallyController: UIViewController {
         return cell
     }()
 
+    var txtTitle: UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.backgroundColor = .lightGray
+        lbl.textColor = .white
+        lbl.textAlignment = .center
+        lbl.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        lbl.text = "Programmatically"
+
+        return lbl
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let displayWidth: CGFloat = view.frame.width
-        let displayHeight: CGFloat = view.frame.height
-
-        tableView = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight))
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(ReuseableCell.self, forCellReuseIdentifier: cellId)
+        view.addSubview(txtTitle)
+        NSLayoutConstraint.activate([
+            txtTitle.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            txtTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            txtTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            txtTitle.heightAnchor.constraint(equalToConstant: 64)
+        ])
 
         view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: txtTitle.bottomAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        ])
     }
 }
 
